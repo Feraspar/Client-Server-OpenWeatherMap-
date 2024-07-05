@@ -1,0 +1,18 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Введите apiURL, где {cityName} - название города." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="apiUrlTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="https://localhost:60937/api/Weather/{cityName}" VerticalAlignment="Top" Width="360" Height="24" FontSize="14"/>
+        <ListBox x:Name="DataListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="466,59,10,10"/>
+        <Button x:Name="FetchData" Content="FetchData" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="32" Width="70" Click="FetchData_Click"/>
+        <Label Content="При ошибке без кода запроса следует изменить порт localhost.&#xD;&#xA;См. нужный в контейнере Docker сервера" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data&#xD;&#xA;" HorizontalAlignment="Left" Margin="466,31,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
